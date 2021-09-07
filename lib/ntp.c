@@ -5,7 +5,8 @@
 #include <string.h>
 #include <sys/socket.h>
 #include <unistd.h>
-#include <time.h>
+
+#include "../ntp.h"
 
 typedef struct {
   uint8_t li_vn_mode; // Eight bits. li, vn, and mode.
