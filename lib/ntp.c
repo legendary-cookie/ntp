@@ -38,12 +38,13 @@ typedef struct {
 
 } ntp_packet; // Total: 384 bits or 48 bytes.
 
-
-time_t get_current_time() {
+time_t get_current_time(char *host_name) {
   unsigned long long NTP_TIMESTAMP_DELTA = 2208988800ull;
   int sockfd, portno;
   size_t n;
-  const char *host_name = "pool.ntp.org";
+  if (host_name == NULL) {
+    host_name = "pool.ntp.org";
+  } 
   portno = 123;
   ntp_packet packet = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
   memset(&packet, 0, sizeof(ntp_packet));
