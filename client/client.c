@@ -8,6 +8,6 @@ int main(int argc, char **argv) {
   } else {
     cur = get_current_time(argv[1]);
   }
-  printf("Time: %s", ctime((const time_t *)&cur));
+  printf("%s", ctime((const time_t *)&cur));
   return 0;
 }
